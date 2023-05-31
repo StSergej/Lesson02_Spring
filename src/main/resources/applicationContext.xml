@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="musicBeanRock"
+          class="org.example.example01.RockMusic">
+    </bean>
+
+    <bean id="classicMusic"
+          class="org.example.example01.ClassicMusic">
+    </bean>
+
+    <bean id="musicPlayer"
+          class="org.example.example01.MusicPlayer"
+          init-method="myInit"
+          destroy-method="myDestroy">
+        <constructor-arg name="music" ref="musicBeanRock"/>
+
+        <property name="name" value="Sony Stereo System"/>
+        <property name="volume" value="98"/>
+
+
+    </bean>
+
+</beans>
